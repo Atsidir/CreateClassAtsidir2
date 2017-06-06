@@ -1,11 +1,10 @@
 ﻿using System;
 
-
 namespace CreateClass
 {
-    class Person
+    public class Person
     {
-        string name;
+        public string name;
         DateTime birthdate;
         enum Genders {Male,Female};
         Genders gender;
@@ -28,9 +27,34 @@ namespace CreateClass
 
         public override string ToString()
         {
-            return name+" "+birthdate + " " + gender;
+            return name + " "+birthdate + " " + gender;
         }
     }
+
+    public class Employee : Person
+    {
+        public int salary;
+        public string position;
+        Room room;
+
+        public Employee(string name, DateTime birthdate,int salary,string position,Room room) : base(name, birthdate)
+        {
+            this.salary = salary;
+            this.position = position;
+            this.room = room;
+        }
+    }
+
+    public class Room
+    {
+        int roomNumber;
+
+        public Room(int rnumber) {
+            this.roomNumber = rnumber;
+        }
+    }
+
+    
 
     class Program
     {
